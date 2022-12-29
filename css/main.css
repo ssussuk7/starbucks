@@ -1,0 +1,1065 @@
+/* COMMON */
+
+body {
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+img {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.inner {
+    width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+.btn {
+    width: 130px;
+    padding: 15px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: block;
+    transition: background-color .4s;
+}
+
+.btn:hover {
+    background-color: #333;
+    color: white;
+}
+
+
+/* 반전된 상태의 btn */
+
+.btn--reverse {
+    background-color: #333;
+    color: white;
+}
+
+.btn--reverse:hover {
+    background-color: transparent;
+    color: #333;
+}
+
+
+/* 애니메이션 설정 */
+
+.back-to-position {
+    opacity: 0;
+    transition: 1s;
+}
+
+.back-to-position.to-right {
+    transform: translateX(-150px);
+}
+
+.back-to-position.to-left {
+    transform: translateX(150px);
+}
+
+.show.back-to-position {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* HEADER */
+
+header {
+    width: 100%;
+    background-color: #f6f5f0;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+}
+
+header .inner {
+    height: 120px;
+    top: 0;
+}
+
+header .logo {
+    height: 75px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    /* display: none; */
+}
+
+header .sub-menu {
+    display: flex;
+    right: 50px;
+    position: absolute;
+}
+
+header .sub-menu ul {
+    display: flex;
+    position: relative
+}
+
+header .sub-menu ul li {}
+
+header .sub-menu ul li::before {
+    content: "";
+    background-color: black;
+    display: block;
+    width: 1px;
+    height: 11px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    margin: auto 0;
+}
+
+header .sub-menu ul li:first-child::before {
+    display: none;
+}
+
+header .sub-menu ul li a {
+    color: #333;
+    display: block;
+    padding: 10px 11px;
+}
+
+header .sub-menu ul li a:hover {
+    color: #333;
+}
+
+header .sub-menu .search {
+    position: relative;
+    top: 0;
+    bottom: 0;
+}
+
+header .sub-menu .search input {
+    width: 36px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    outline: none;
+    transition: .4s;
+}
+
+header .sub-menu .search input:focus {
+    width: 170px;
+    border-color: green;
+    transition: .5s;
+}
+
+header .sub-menu .search .material-icons {
+    position: absolute;
+    height: 24px;
+    right: 0px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    transition: .4s;
+}
+
+header .sub-menu .search.focused .material-icons {
+    opacity: 0;
+}
+
+header .main-menu {
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+    right: 50px;
+}
+
+header .main-menu .item {}
+
+header .main-menu .item .item__name {
+    padding: 20px 25px 20px 25px;
+    font-weight: 700;
+}
+
+header .main-menu .item:hover .item__name {
+    background-color: #333;
+    color: green;
+    border-radius: 5px 5px 0px 0px;
+}
+
+header .main-menu .item .item__contents {
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    display: none;
+}
+
+header .main-menu .item:hover .item__contents {
+    display: block;
+}
+
+header .main-menu .item .item__contents .contents_menu {
+    background-color: #2c2a29;
+}
+
+header .main-menu .item .item__contents .contents_menu>ul {
+    display: flex;
+    padding: 10px 0px;
+}
+
+header .main-menu .item .item__contents .contents_menu ul>li {
+    width: 220px;
+}
+
+header .main-menu .item .item__contents .contents_menu ul>li h3 {
+    font-size: 14px;
+    color: white;
+    padding: 3px 0px 8px 0px;
+}
+
+header .main-menu .item .item__contents .contents_menu ul>li ul li {
+    padding: 5px 3px;
+    font-size: 12px;
+    color: #999;
+    cursor: pointer;
+}
+
+header .main-menu .item .item__contents .contents_texture {
+    padding: 20px 0px;
+    background-image: url("../images/main_menu_pattern.jpg");
+}
+
+header .main-menu .item .item__contents .contents_texture h3 {
+    font-size: 14px;
+    color: #999;
+    padding: 3px 0px 12px 0px;
+    font-weight: 700;
+}
+
+header .main-menu .item .item__contents .contents_texture p {
+    margin: 5px 0px 12px 0px;
+    font-size: 12px;
+    color: #669900;
+    cursor: pointer;
+}
+
+header .badges {
+    position: absolute;
+    top: 120px;
+    right: 50px;
+}
+
+header .badges .badge {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.35);
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.visual {
+    margin-top: 120px;
+    height: 600px;
+    background-image: url("../images/visual_bg.jpg");
+    background-position: center;
+}
+
+section .visual .inner {
+    height: 600px;
+    position: relative;
+}
+
+section .visual .title .main {
+    position: absolute;
+    top: 70px;
+    left: 20px;
+}
+
+section .visual .title .main img {
+    width: 400px;
+}
+
+section .visual .title .main .btn {
+    margin: 20px auto;
+}
+
+section .visual .title .main .btn:hover {
+    background-color: #333;
+    color: white;
+    transition: .5s;
+}
+
+section .visual .title .cup1.image {
+    top: 50px;
+    right: 10px;
+    position: absolute;
+    height: 500px;
+    margin: auto 0px;
+}
+
+section .visual .title .cup1.text {
+    position: absolute;
+    width: 150px;
+    top: 30px;
+    right: 200px;
+}
+
+section .visual .title .cup2.image {
+    top: 130px;
+    right: 180px;
+    width: 250px;
+    position: absolute;
+}
+
+section .visual .title .cup2.text {
+    position: absolute;
+    width: 250px;
+    top: 300px;
+    right: 400px;
+}
+
+section .visual .title .spoon {
+    bottom: 0px;
+    right: 400px;
+    position: absolute;
+}
+
+.visual .fade-in {
+    opacity: 0;
+}
+
+.notice {
+    height: 64px;
+    position: relative;
+}
+
+.notice .bg--left {
+    background-color: #333;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+}
+
+.notice .bg--right {
+    background-color: white;
+    width: 50%;
+    top: 0;
+    right: 0;
+    height: 100%;
+    position: absolute;
+}
+
+.notice .inner {
+    display: flex;
+    height: 64px;
+}
+
+.notice .inner .text--left {
+    background-color: #333;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notice .inner .text--left .title {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 20px;
+}
+
+.notice .inner .text--left .swiper {
+    flex-grow: 1;
+    height: 64px;
+}
+
+.notice .inner .text--left .swiper .swiper-slide {
+    height: 64px;
+    display: flex;
+    align-items: center;
+}
+
+.notice .inner .text--left .swiper .swiper-slide a {
+    color: white;
+    font-size: 18px;
+}
+
+.notice .inner .text--left .material-icons {
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 64px;
+    font-size: 30px;
+}
+
+.notice .text--right {
+    background-color: white;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.notice .inner .text--right .title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 20px;
+}
+
+.notice .inner .text--right .material-icons {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.promotion {
+    height: 630px;
+    background-color: #f6f5ef;
+    position: relative;
+    transition: height .5s;
+    overflow: hidden;
+}
+
+.promotion.hide {
+    height: 0;
+}
+
+.promotion .swiper {
+    height: 550px;
+    width: calc(819px * 3 + 10px);
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    margin-left: calc((819px*3+20px)/-2);
+}
+
+.promotion .swiper .swiper-wrapper {}
+
+.promotion .swiper .swiper-slide {
+    opacity: .5;
+    position: relative;
+}
+
+.promotion .swiper .swiper-slide-active {
+    opacity: 1;
+}
+
+.promotion .swiper .btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.promotion .swiper-pagination {
+    bottom: 40px;
+    right: 0;
+    left: 0;
+}
+
+.promotion .swiper-pagination .swiper-pagination-bullet {
+    background-image: url("../images/promotion_slide_pager.png");
+    width: 11px;
+    height: 11px;
+}
+
+.promotion .swiper-pagination .swiper-pagination-bullet-active {
+    background-image: url("../images/promotion_slide_pager_on.png");
+    width: 11px;
+    height: 11px;
+}
+
+.promotion .swiper-button-prev,
+.promotion .swiper-button-next {
+    width: 20px;
+    height: 20px;
+    top: 300px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    outline: none;
+    color: #333;
+    transition: color .5s;
+}
+
+.promotion .swiper-button-prev {
+    left: 50%;
+    margin-left: -500px;
+}
+
+.promotion .swiper-button-next {
+    right: 50%;
+    margin-right: -500px;
+}
+
+.promotion .swiper-button-prev:hover,
+.promotion .swiper-button-next:hover {
+    color: royalblue;
+}
+
+.rewards {
+    position: relative;
+}
+
+.rewards .bg_left {
+    width: 50%;
+    height: 100%;
+    background-color: #272727;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.rewards .bg_right {
+    width: 50%;
+    height: 100%;
+    background-color: #d5c798;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.rewards .inner {
+    background-image: url("../images/rewards.jpg");
+    height: 240px;
+}
+
+.rewards .inner .btn-group {
+    position: absolute;
+    display: flex;
+    width: 270px;
+    flex-wrap: wrap;
+    bottom: 20px;
+    right: 10px;
+}
+
+.rewards .inner .btn-group .btn.btn--login {
+    margin-left: 10px;
+}
+
+.rewards .inner .btn-group .btn.btn--gift {
+    flex-grow: 1;
+    margin-top: 10px;
+}
+
+.youtube {
+    background-color: #333;
+    height: 700px;
+    position: relative;
+    overflow: hidden;
+}
+
+.youtube .youtube__area {
+    width: 1980px;
+    background-color: orange;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: calc(1980px / -2);
+    margin-top: calc(1980px * (9 / 16) / -2);
+}
+
+
+/* 19:6 비율로 설정 */
+
+.youtube .youtube__area::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+}
+
+.youtube .youtube__cover {
+    background-image: url("../images/video_cover_pattern.png");
+    background-color: rgba(0, 0, 0, .3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.youtube #player {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.youtube .inner {
+    height: 700px;
+}
+
+.youtube .inner .floating1 {
+    position: absolute;
+    top: 20px;
+    left: 0;
+}
+
+.youtube .inner .floating2 {
+    position: absolute;
+    top: 300px;
+    left: 120px;
+}
+
+.season-product {
+    background-image: url("../images/season_product_bg.jpg");
+}
+
+.season-product .inner {
+    height: 400px;
+}
+
+.season-product .inner .floating3 {
+    position: absolute;
+    top: -200px;
+    right: 10px;
+    width: 220px;
+}
+
+.season-product .inner .text-group {
+    position: absolute;
+    top: 110px;
+    right: 110px;
+}
+
+.season-product .inner .text-group .description {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.reserve-product {
+    background-image: url("../images/reserve_bg.jpg");
+}
+
+.reserve-product .inner {
+    height: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.reserve-product .inner .text-group {
+    margin-left: 30px;
+    margin-right: 20px;
+}
+
+.pick-favorite {
+    background-image: url("../images/favorite_bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.pick-favorite .inner {
+    padding: 110px 0;
+}
+
+.pick-favorite .text-group {
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-left: 100px;
+}
+
+.pick-favorite .text-group .description {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.pick-favorite .text-group .btn {
+    background-color: white;
+    border: 1px solid white;
+    transition: 1s;
+}
+
+.pick-favorite .text-group .btn:hover {
+    background-color: #999;
+}
+
+.reserve-store {
+    background-image: url("../images/reserve_store_bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.reserve-store .inner {
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reserve-store .inner .medal {
+    width: 334px;
+    height: 334px;
+    perspective: 600px;
+}
+
+.reserve-store .inner .medal .front,
+.reserve-store .inner .medal .back {
+    width: 334px;
+    height: 334px;
+    backface-visibility: hidden;
+    transition: 1s;
+    position: absolute;
+}
+
+.reserve-store .inner .medal .front {
+    transform: rotateY(0deg);
+}
+
+.reserve-store .inner .medal:hover .front {
+    transform: rotateY(180deg);
+}
+
+.reserve-store .inner .medal .back {
+    transform: rotateY(-180deg);
+}
+
+.reserve-store .inner .medal:hover .back {
+    transform: rotateY(0deg);
+}
+
+.reserve-store .inner .medal .back .btn {
+    position: absolute;
+    top: 240px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.find-store {
+    background-image: url("../images/find_store_bg.jpg");
+}
+
+.find-store .inner {
+    height: 400px;
+}
+
+.find-store .inner .picture1,
+.find-store .inner .picture2 {
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, .3);
+}
+
+.find-store .inner .picture1 {
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    left: 0;
+    top: -50px;
+}
+
+.find-store .inner .picture2 {
+    width: 216px;
+    height: 216px;
+    position: absolute;
+    left: 200px;
+    top: 150px
+}
+
+.find-store .inner .texture1 {
+    position: absolute;
+    top: 0;
+    left: 400px;
+}
+
+.find-store .inner .text-group {
+    position: absolute;
+    top: 140px;
+    left: 500px;
+}
+
+.find-store .inner .text-group .text2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.find-store .inner .texture2 {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+}
+
+.award {
+    background-color: #272727;
+    border-bottom: 0.5px solid rgba(255, 255, 255, .2);
+    position: relative;
+}
+
+.award .inner {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.award .swiper-button-prev,
+.award .swiper-button-next {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    color: #999;
+}
+
+.award .swiper-button-prev {
+    left: -100px;
+}
+
+.award .swiper-button-next {
+    right: -100px;
+}
+
+footer {
+    background-color: #272727;
+}
+
+footer .inner {
+    height: 180px;
+    padding: 20px 0 60px 0;
+}
+
+footer .inner .menu {
+    display: flex;
+    justify-content: center;
+}
+
+footer .inner .menu li {
+    position: relative;
+}
+
+footer .inner .menu li::before {
+    width: 3px;
+    height: 3px;
+    border-radius: 50px;
+    content: "";
+    position: absolute;
+    background-color: #555;
+    top: 0;
+    bottom: 0;
+    left: 5px;
+    margin: auto;
+}
+
+footer .inner .menu li:first-child::before {
+    display: none;
+}
+
+footer .inner .menu li a {
+    color: white;
+    display: block;
+    font-size: 12px;
+    margin-left: 20px;
+    padding: 15px;
+}
+
+footer .inner .menu li a.green {
+    color: #669900;
+}
+
+footer .inner .btn-group {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .inner .btn-group .btn {
+    background-color: #272727;
+    border: 1px solid white;
+    font-size: 14px;
+    margin-right: 10px;
+    transition: background-color 1s;
+}
+
+footer .inner .btn-group .btn:last-child {
+    margin-right: 0px;
+}
+
+footer .inner .btn-group .btn:hover {
+    background-color: white;
+    color: #333;
+}
+
+footer .inner .text-group {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+footer .inner .text-group span {
+    font-size: 12px;
+    color: #999;
+    margin-left: 30px;
+}
+
+footer .inner .text-group span:last-child {
+    margin-left: 0px;
+}
+
+footer .inner .year-group {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+footer .inner .year-group span {
+    font-size: 12px;
+    color: #999;
+    margin-left: 3px;
+}
+
+
+/* img 태그는 그 자체로 width값을 가지기때문에 margin auto 적용가능 */
+
+footer .inner .logo {
+    margin: 20px auto;
+}
+
+#to-top {
+    width: 42px;
+    height: 42px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 30px;
+    right: 30px;
+    position: fixed;
+    z-index: 9;
+}
+
+.signin {
+    background-image: url("../images/signin_bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.signin .inner {
+    height: 800px;
+}
+
+.signin .inner .signbox {
+    width: 500px;
+    height: 410px;
+    background-color: #F6F5F0;
+    position: absolute;
+    border-radius: 10px;
+    margin: auto;
+    left: 50%;
+    top: 50%;
+    margin-left: calc(500px / -2);
+    margin-top: calc(290px / -2);
+    border: solid 1px #d5c798;
+}
+
+.signin .inner .signbox .signbox-top {
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #DDDDDD;
+    align-items: center;
+}
+
+.signin .inner .signbox .signbox-top .title {
+    width: 100%;
+    font-size: 32px;
+    font-weight: 700;
+    position: absolute;
+    top: -60px;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.signin .inner .signbox .signbox-top .text {
+    font-size: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #555;
+}
+
+.signin .inner .signbox .signbox-mid {
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #DDDDDD;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+.signin .inner .signbox .signbox-mid input {
+    width: 460px;
+    height: 40px;
+    margin-bottom: 10px;
+    border: 1px solid #DDDDDD;
+}
+
+.signin .inner .signbox .signbox-mid .btn {
+    width: 435px;
+    background-color: red;
+    color: white;
+    box-sizing: content-box;
+}
+
+.signin .inner .signbox .signbox-mid .description {
+    margin-top: 10px;
+    font-size: 12px;
+    width: 300px;
+    text-align: center;
+    color: red;
+}
+
+.signin .inner .signbox .signbox-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signin .inner .signbox .signbox-bottom .btn {
+    width: 300px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    font-weight: 400;
+    border-right: 1px solid #DDDDDD;
+}
+
+.signin .inner .signbox .signbox-bottom .btn.btn:last-child {
+    border: none;
+}
